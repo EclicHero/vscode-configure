@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+        	"type": "shell",
+        	"label": "gbdbuild",
+        	"command": "C:/mingw64/bin/g++.exe",	
+       	 	"args": [
+            	"-g",
+				"${workspaceFolder}\\src\\**",
+            	"-o",
+            	"${workspaceFolder}\\bin\\${workspaceRootFolderName}.exe",			//-o是设置输出路径	
+				"-I", 
+            	"${workspaceFolder}\\include", // 头文件所在文件夹         
+            	"-std=c++17",
+				"-fexec-charset=GBK" //utf-8转GBK格式，解决中文乱码问题
+        	],
+			"type":"process",
+        	"options": {
+            	"cwd": "C:/mingw64/bin"
+       		},
+        	"problemMatcher":[
+            	"$gcc"
+        	],
+        	"group": {
+                "kind": "build",
+                "isDefault": true
+            }			
+		}
+        
+    ]
+}
